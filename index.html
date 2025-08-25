@@ -9,6 +9,30 @@
 <body>
   <div class="container py-4">
     <h1 class="mb-4 text-center">Toma de Turno Baño Hombres</h1>
+
+    <!-- Personas en el baño actualmente -->
+    <div class="mb-4">
+      <h4>Personas en el baño actualmente</h4>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Jesmer Lujan
+          <span class="badge bg-primary rounded-pill">2h 30m</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Personas en cola -->
+    <div class="mb-4">
+      <h4>Personas en cola</h4>
+      <ul class="list-group">
+        <li class="list-group-item">Lenin</li>
+        <li class="list-group-item">Rene</li>
+        <li class="list-group-item">Carlos</li>
+        <li class="list-group-item">Angelo</li>
+        <li class="list-group-item">Glenn</li>
+      </ul>
+    </div>
+
     <form id="turnoForm" class="mx-auto" style="max-width: 400px;">
       <div class="mb-3">
         <label for="nombre" class="form-label">Nombre <span class="text-danger">*</span></label>
@@ -50,19 +74,14 @@
         return;
       }
 
-      // Validacion adicional (telefono solo números, longitud)
       const telPattern = /^[0-9]{7,15}$/;
       if (!telPattern.test(telefono)) {
         alert('Ingrese un número de teléfono válido (7 a 15 dígitos, solo números).');
         return;
       }
 
-      // Mostrar mensaje de confirmación en pantalla
       const mensaje = `Hola ${nombre}, estás en el puesto 1.2358. Al venir tu turno te llegará un mensaje.`;
       document.getElementById('resultado').textContent = mensaje;
-
-      // Limpiar formulario si se desea después de enviar
-      // this.reset();
     });
   </script>
 
